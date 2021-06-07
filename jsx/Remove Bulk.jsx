@@ -1,4 +1,5 @@
-var remove_bulk_effects = function (comps, effects_name_arr, layer_name) {
+function Remove_Bulk(){};
+Remove_Bulk.prototype.effects_in_comps = function (comps, effects_name_arr, layer_name) {
     try {
         var ex_num = 0
         app.beginUndoGroup("Remove effcts bulk")
@@ -23,7 +24,9 @@ var remove_bulk_effects = function (comps, effects_name_arr, layer_name) {
     }
 }
 
-/******************  example ***********************/
+/**********************  example *************************/
+var removeb=new  Remove_Bulk();
 var comps = app.project.selection
 var effects_name = ["Position", "scale", "Rotation", "Opacity"]
-remove_bulk_effects(comps,effects_name, "Controller")
+removeb.effects_in_comps(comps,effects_name, "Controller")
+/////Will remove All effects_names in Controller layer ////
